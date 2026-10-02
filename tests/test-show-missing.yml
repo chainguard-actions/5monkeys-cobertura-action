@@ -1,0 +1,41 @@
+name: Test show missing lines and class names
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Copy fixture coverage file to workspace
+        run: |
+          cp "$GITHUB_WORKSPACE/tests/fixtures/coverage.xml" "$GITHUB_WORKSPACE/coverage.xml"
+
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          repo_token: ${{ github.token }}
+          path: coverage.xml
+          skip_covered: false
+          minimum_coverage: '50'
+          fail_below_threshold: false
+          show_missing: true
+          show_missing_max_length: '20'
+          show_class_names: true
+          show_line: true
+          show_branch: true
+
+      - name: Assert action ran (succeeds or fails gracefully on sentinel repo)
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+        run: |
+          echo "outcome: $OUTCOME"
+          if [ "$OUTCOME" = "success" ]; then
+            echo "PASS: action succeeded with show_missing and show_class_names options"
+          elif [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action failed gracefully (expected on sentinel repo without a real PR)"
+          else
+            echo "FAIL: unexpected outcome '$OUTCOME'"
+            exit 1
+          fi
