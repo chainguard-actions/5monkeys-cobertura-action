@@ -6,9 +6,9 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 ## Versions
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v14 | [`v14`](https://github.com/chainguard-actions/5monkeys-cobertura-action/tree/v14) | [`ee5787c`](https://github.com/5monkeys/cobertura-action/commit/ee5787cc56634acddedc51f21c7947985531e6eb) |
+| Version | Tag | Upstream commit | Hardening report |
+|---------|-----|-----------------|------------------|
+| v14 | [`v14`](https://github.com/chainguard-actions/5monkeys-cobertura-action/tree/v14) | [`ee5787c`](https://github.com/5monkeys/cobertura-action/commit/ee5787cc56634acddedc51f21c7947985531e6eb) | [`HARDENING.md`](https://github.com/chainguard-actions/5monkeys-cobertura-action/blob/v14/HARDENING.md) |
 
 ## Privacy
 
