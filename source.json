@@ -4,8 +4,13 @@
   "version": "v14",
   "commit_sha": "ee5787cc56634acddedc51f21c7947985531e6eb",
   "url": "https://github.com/5monkeys/cobertura-action",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/5monkeys/cobertura-action/v14/sha256-65a95ca1842c22ba5780ad23e229e0841b04c5ed89b8dab0a076d17903cc87cc.tar.gz",
+    "sha256": "65a95ca1842c22ba5780ad23e229e0841b04c5ed89b8dab0a076d17903cc87cc",
+    "size_bytes": 321241
+  }
 }
